@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+nav, footer, section {
+    border: 1px solid gray;
+}
+
+nav, footer {
+    width: 100%;
+    height: 100px;
+    clear: both;
+}
+
+.width-33 {
+    width: 33.3333%;
+    float: left;
+    height: 150px;
+}
+
+.width-50 {
+    width: 50%;
+    float: left;
+    height: 200px;
+
+}
