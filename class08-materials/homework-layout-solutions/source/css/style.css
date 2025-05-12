@@ -1,0 +1,243 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  color: #304659;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/* header */
+
+nav {
+  position: relative;
+}
+
+nav > * {
+  float: left;
+  width: 33.33%;
+  margin: 1% 0;
+}
+
+nav li {
+  float: left;
+  margin-right: 5%;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav > a {
+  position: absolute;
+  width: 10%;
+  margin: .5% 0;
+  right: -1px;
+}
+
+main > * {
+  float: left;
+  margin-right: 15%;
+}
+
+main section {
+  width: 30%;
+}
+
+main {
+  position: relative;
+}
+
+main div {
+  width: 30%;
+  margin-right: 0;
+  position: absolute;
+  right: 1px;
+} 
+
+main div img {
+  position: absolute;
+  right: -1px;
+}
+
+h1 {
+  width: 80%;
+}
+
+.features section {
+  float: left;
+  width: 25%;
+}
+
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+p {
+  line-height: 1.5;
+}
+
+p,
+.nav li a {
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+.logo,
+span,
+.features a {
+  font-weight: 700;
+}
+
+/* header */
+
+nav > a{
+  text-align: center;
+}
+
+/* main */
+
+h1,
+h2 {
+  font-size: 2.25rem;
+}
+
+.tagline {
+  font-weight: 400;
+}
+
+/* features */
+
+span {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+h1,
+h2,
+h3,
+p,
+form{
+  margin-bottom: 22px;
+}
+
+nav li a,
+.features + section p{
+  color: #667888;
+}
+
+.features + section {
+  background-color: #f5f9fc;
+}
+main,
+body > section {
+  padding: 5% 2%;
+}
+
+header,
+main,
+.features {
+  background: #f5f9fc;
+  background: linear-gradient(to right, 
+   #c8cfd3 1%, #f5f9fc, #e1e9f0);
+}
+
+input::placeholder,
+.tagline {
+  color: #90a4b5;
+}
+
+/* header */
+
+header {
+  padding: 0 2%;
+}
+
+nav > a {
+  background-color: #304659;
+  color: #f1f1f1;
+  padding: 5px 0;
+}
+
+/* main */
+
+main input {
+  border: none;
+}
+
+form {
+  width: 100%;
+}
+
+input[type="text"] {
+  background-color: #e1e9f0;
+  width: 70%;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  background-color: #304659;
+  color: #f1f1f1;
+  width: 30%;
+  padding: 5px 0;
+}
+
+/* features */
+
+.features a {
+  color: #304659;
+}
+
+.features a::after {
+  color: #304659;
+  content: ">";
+  margin-left: 5%;
+}
+
+.features p {
+  width: 80%;
+}
+
+/* section after features */
+h2,
+.features + section p{
+  width: 40%;
+}
+

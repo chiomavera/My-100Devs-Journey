@@ -1,0 +1,188 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font: 300 16px/22px Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  width: 100%;
+}
+
+span {
+  display: inline-block;
+}
+
+/******************************************
+/* REUSABLE STYLE
+/*******************************************/
+/* Clear fix hack */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.gray {
+  color: gray;
+}
+
+.orange {
+  color: orange;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body > div {
+  margin: 0.5% 1%;
+}
+
+body > div > * {
+  float: left;
+  margin-right: 2%;
+  width: 10%;
+}
+
+/* nav */
+
+div > nav {
+  width: 10%;
+}
+
+div > nav * {
+  margin-bottom: 10%;
+  display: block;
+  color: gray;
+}
+
+div > nav > a {
+  margin-bottom: 20%;
+}
+
+div > nav li {
+  margin-bottom: 5%;
+}
+
+div main {
+  width: 56%;
+}
+
+div aside {
+  width: 30%;
+  margin-right: 0;
+}
+
+section {
+  margin: 0.5%;
+}
+
+section > section,
+h3,
+section hr {
+  margin-left: 12%;
+}
+
+section > section > * {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+}
+
+section section div:last-child {
+  margin-right: 0;
+}
+
+section span {
+  display: block;
+}
+
+hr {
+  margin-right: .5%;
+}
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+h2,
+h3,
+h4,
+p,
+span {
+  margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+span {
+  font-weight: 600;
+}
+
+h1,
+nav > a {
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 12px;
+  line-height: 44px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+span {
+  font-size: 12px;
+}
+
+nav ul a {
+  font-size: 14px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+nav img {
+  width: 30px;
+  height: 20px;
+}
+
+section img {
+  height: 200px;
+}
+
+ 

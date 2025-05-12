@@ -1,0 +1,222 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+clear: both;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* header */
+
+header nav > *{
+  float: left;
+  margin: .5%;
+  width: 10%;
+}
+
+nav ul {
+  width: 60%;
+}
+
+nav li {
+  float: left;
+  margin: 0 2%;
+}
+
+/* main section */
+
+main {
+  margin: 0 .5%;
+}
+
+main > div *{
+  float: left;
+  width: 50%;
+}
+
+main > section  {
+  float: left;
+  width: 50%;
+}
+
+/* section with 2 layouts */
+
+main > section > *{
+  float: left;
+  height: 400px;
+  width: 50%;
+}
+
+.sec-2-sec{
+  padding-right: .5%;
+}
+
+.sec-2-sec img{
+  padding-right: .5%;
+}
+
+/* section with 4 layouts */
+main > section+section > *{
+  float: left;
+  height: 200px;
+  width: 50%;
+}
+
+.sec-4-sec img{
+  padding-right: 2%;
+  padding-bottom: 2%;
+}
+
+.sec-4-sec .vaccine img,
+.sec-4-sec .singer img{
+  padding-right: 0;
+}
+
+.sec-4-sec .singer img,
+.sec-4-sec .gym img{
+  padding-bottom: 0;
+}
+
+/* News section */
+
+main + section > section {
+  float: left;
+  width: 32.33%;
+  margin: 0 .5%;
+}
+
+main + section {
+  margin-top: 50px;
+}
+
+main + section > h2{
+  margin:  .5%;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* header */
+
+header {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  color: white;
+}
+
+nav {
+  padding: .5% 0;
+}
+
+nav a {
+  color: #fff;
+}
+
+/* main */
+
+main div h4 {
+  text-align: right;
+}
+
+
+
+.sec-2-sec {
+  position: relative;
+}
+
+.sec-2-sec div:last-child {
+  color: #fff;
+  margin: 0 2%;
+  position: absolute;
+  top: 80%;
+  width: 80%;
+}
+
+.usa {
+  position: relative;
+}
+
+.sec-4-sec .usa >div{
+  color: #fff;
+  margin: 0 2%;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}
+
+.vaccine {
+  position: relative;
+}
+
+.sec-4-sec .vaccine >div{
+  color: #fff;
+  margin: 0 2%;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}
+
+.singer {
+  position: relative;
+}
+
+.sec-4-sec .singer >div{
+  color: #fff;
+  margin: 0 2%;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}
+
+.gym {
+  position: relative;
+}
+
+.sec-4-sec .gym >div{
+  color: #fff;
+  margin: 0 2%;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}

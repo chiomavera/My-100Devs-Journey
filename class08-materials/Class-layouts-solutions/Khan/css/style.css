@@ -1,0 +1,175 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+header {
+  margin: .5% 10%;
+}
+
+header nav > * {
+  float: left;
+  margin: .5% 5%;
+  width: 10%;
+}
+
+nav {
+  position: relative;
+}
+
+nav ul {
+  margin-right: 0;
+}
+
+header div {
+  width: 40%;
+  margin-left: 0;
+}
+
+header nav div >* {
+  float: left;
+  margin-right: 5%;
+}
+
+.nav-items{
+  margin-right: 0;
+  position: absolute;
+  right: 0;
+}
+
+header nav ul {
+  width: 25%;
+}
+
+nav li a {
+  float: left;
+  display: block;
+  margin-right: 5%;
+  width: 30%;
+}
+
+.sign-up {
+  margin-right: 0;
+}
+
+main {
+  margin: 2% 5%;
+}
+
+main > * {
+  float: left;
+  margin: 0 2%;
+  
+}
+
+main section {
+  width: 50%;
+}
+
+main section + section {
+  width: 40%;
+  margin-top: 5%;
+}
+
+main section+section li{
+  float: left;
+  margin-right: 5%;
+}
+
+form > *{
+  float: left;
+}
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  width: 70%;
+}
+
+main p {
+  line-height: 1.5em;
+  margin-bottom: 22px;
+}
+
+main ul a {
+  font-size: 12px;
+}
+
+main p,
+ a {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+main ul a {
+  background-color: rgb(62, 96, 230);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+h1,
+p {
+  color: rgb(63, 63, 63);
+}
+
+a,
+select,
+form label {
+  color:  rgb(62, 96, 230);
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+form,
+input {
+  background-color: #eee;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+

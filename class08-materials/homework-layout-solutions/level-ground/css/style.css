@@ -1,0 +1,195 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/
+*******************************************/
+body {
+  text-align: center;
+  color: #161f2a;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+header nav > * {
+  float: left;
+  width: 33.33%;
+  margin: 1% 3%;
+}
+
+nav {
+  position: relative;
+}
+
+nav div {
+  width: 20%;
+}
+
+nav div > * {
+  float: left;
+  margin-right: 5%;
+}
+
+nav > a {
+  position: absolute;
+  right: -1px;
+  width: 10%;
+}
+
+main,
+body > section {
+  padding: 5%;
+}
+
+.features section {
+  float: left;
+  width: 50%;
+}
+
+/******************************************
+/* TYPOGRAGHY
+/*******************************************/
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+a {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+main a {
+  font-weight: 300;
+}
+
+
+/******************************************
+/* REUSABLE
+/*******************************************/
+
+.btn {
+  padding: 10px 20px;
+  border: 1.5px solid #c1c4c6;
+  color: #161f2a;
+  font-weight: 600;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+header,
+main,
+.box {
+  background-color: #66768a;
+}
+
+header,
+main {
+  color: #f1f1f1;
+}
+
+nav a {
+  color: #f1f1f1;
+}
+
+nav > a:last-child {
+  background-color: #fff;
+  border-radius: 2px;
+  color: #66768a;
+  padding: 5px;
+}
+
+h1,
+main p,
+.why p,
+.features p,
+.volunter p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  width: 80%;
+}
+
+main p {
+  width: 50%;
+}
+
+main a {
+  color: #f1f1f1;
+  text-transform: none;
+}
+
+.why p {
+  margin-bottom: 0;
+}
+
+.why p,
+.volunter p {
+  width: 40%;
+}
+
+.features {
+  background-color: #dbdfe2;
+}
+
+.features .box {
+  border: none;
+  width: 300px;
+  height: 150px;
+  margin: auto;
+  margin-bottom: 22px;
+}
+
+.features p {
+  width: 70%;
+}
