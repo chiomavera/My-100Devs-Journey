@@ -1,0 +1,39 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+  .dog-container {
+    display: flex;
+    gap: 1rem; /* space between the images */
+    justify-content: center; /* optional: center them horizontally */
+    flex-wrap: wrap; /* optional: wrap on smaller screens */
+    margin-top: 2rem;
+  }
+
+  .dog-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* ensures the image fills the box without distortion */
+    border-radius: 10px; /* optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* optional: subtle shadow */
+  }
+
