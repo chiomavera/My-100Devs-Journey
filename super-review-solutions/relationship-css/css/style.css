@@ -1,0 +1,17 @@
+
+/* 
+Make all h1 red
+Make World and Zebra blue
+Make duck purple */
+
+h2{
+    color: red;
+}
+
+section > h2 {
+    color: blue;
+}
+
+section + article > h2 {
+    color: purple;
+}
