@@ -1,6 +1,5 @@
 //Arrays
 
-//Create and array of numbers. Sum all of the numbers. Alert the sum.
 // let sum = 0;
 // let nums = [3, 4, 5];
 

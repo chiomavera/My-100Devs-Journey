@@ -10,7 +10,7 @@
 //     .catch(err => {
 //             console.log(`error ${err}`)
 //     })
-    
+
 // Dispaly 3 random photos at once
 // fetch("https://dog.ceo/api/breeds/image/random/3")
 //     .then(res => res.json())  //parse response as JSON
