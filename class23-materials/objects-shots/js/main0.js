@@ -10,7 +10,7 @@ function getDrink () {
       .then(res => res.json()) // parse response as JSON
       .then(data => {
 
-        let drinks = data.drinks
+        let drinks = data.drinks[0]
         console.log(drinks)
 
         // Fetch cocktail name
@@ -23,20 +23,25 @@ function getDrink () {
 
 
         //ingredients
+        document.querySelector("#ingredientsTitle").innerText = "Ingredients"
+
+        const ingredientEntries = Object.entries(drinks).filter(([Key, value]) => Key.startsWith("strIngredient") && value);
+
+         console.log(ingredientEntries)
+
+        const ingredients = ingredientEntries.map (([key, value]) => value);
+
+        console.log(ingredients)
+        
        const ingredientList = document.querySelector("#strIngredients");
-        ingredientList.innerHTML = ""; 
 
-        for (let i = 1; i <= 15; i++) {
-            const ingredient = drinks[`strIngredient${i}`];
-            const measure = drinks[`strMeasure${i}`];
+       ingredients.forEach(ingredient => {
+        const listItem = document.createElement("li");
+        listItem.textContent = ingredient;
+        ingredientList.appendChild(listItem);
+       }
+       )
 
-            if (ingredient) {
-                const listItem = document.createElement("li")
-                listItem.textContent = `${measure || ""} ${ingredient}.trim()`
-                ingredientList.appendChild(listItem)
-            }
-        }
-       
         //How to make cocktail
         document.querySelector("#instructionTitle").innerText = "Instruction"
         document.querySelector("#strInstructions").innerText = drinks.strInstructions
