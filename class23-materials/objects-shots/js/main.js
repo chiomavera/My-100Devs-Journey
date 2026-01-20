@@ -4,7 +4,7 @@
 document.querySelector("button").addEventListener("click", getDrink);
 
 function getDrink () {
-    let drink = document.querySelector("input").value;
+    let drink = document.querySelector("input").value.toLowerCase();
 
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
       .then(res => res.json()) // parse response as JSON
@@ -48,7 +48,9 @@ function getDrink () {
 
         // Video 
         const video = document.querySelector("#strVideo")
-        video.innerText = "click to watch the tutorial video"
+        //video.title = `How to make ${drink} cocktail`
+        //video.src = drinks.strVideo
+        video.innerHTML = `Watch how to make ${drink} cocktail`
         video.href = drinks.strVideo
         
       })
