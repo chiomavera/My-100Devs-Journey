@@ -1,25 +1,35 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
 // Make a carousel of drinks
 
+let drinks = [];
+let currentDrinkIndex = 0;
+
 document.querySelector("button").addEventListener("click", getDrink);
 
 function getDrink () {
-    let drink = document.querySelector("input").value.toLowerCase();
+    let choice = document.querySelector("input").value.toLowerCase();
 
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${choice}`)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
 
-        let drinks = data.drinks
+        drinks = data.drinks;
         console.log(drinks)
+        currentDrinkIndex = 0;
 
-        // Fetch cocktail name
-        console.log(drinks.strDrink)
-        document.querySelector("#strDrink").innerText = drinks.strDrink
+        renderDrink(drinks[currentDrinkIndex])
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+function renderDrink(drink) {
+    // cocktail name
+        document.querySelector("#strDrink").innerText = drink.strDrink
         
         // Drink thumbnail
-        console.log(drinks.strDrinkThumb)
-        document.querySelector("#strDrinkThumb").src = drinks.strDrinkThumb
+        document.querySelector("#strDrinkThumb").src = drink.strDrinkThumb
 
 
         //ingredients
@@ -27,8 +37,8 @@ function getDrink () {
         ingredientList.innerHTML = ""; 
 
         for (let i = 1; i <= 15; i++) {
-            const ingredient = drinks[`strIngredient${i}`];
-            const measure = drinks[`strMeasure${i}`];
+            const ingredient = drink[`strIngredient${i}`];
+            const measure = drink[`strMeasure${i}`];
 
             if (ingredient) {
                 const listItem = document.createElement("li")
@@ -38,18 +48,35 @@ function getDrink () {
         }
        
         //How to make cocktail
-        document.querySelector("#instructionTitle").innerText = "Instruction"
-        document.querySelector("#strInstructions").innerText = drinks.strInstructions
+        document.querySelector("#strInstructions").innerText = drink.strInstructions
 
         // Video 
         const video = document.querySelector("#strVideo")
-        //video.title = `How to make ${drink} cocktail`
-        //video.src = drinks.strVideo
-        video.innerHTML = `Watch how to make ${drink} cocktail`
-        video.href = drinks.strVideo
-        
-      })
-      .catch(err => {
-          console.log(`error ${err}`)
-      });
+        if (drink.strVideo) {
+            video.innerText = "Watch Tutorial"
+            video.href = drink.strVideo
+            video.style.display = "inline";
+        }else {
+            video.style.display = "none";
+        }
 }
+
+document.querySelector("#next").addEventListener("click", () => {
+    console.log("prev")
+    currentDrinkIndex++
+    if(currentDrinkIndex >= drinks.length) {
+        currentDrinkIndex = 0;
+    }
+
+    renderDrink(drinks[currentDrinkIndex])
+});
+
+document.querySelector("#prev").addEventListener("click", () => {
+    console.log("prev")
+    currentDrinkIndex--
+    if(currentDrinkIndex < 0) {
+        currentDrinkIndex = drinks.length - 1;
+    }
+
+    renderDrink(drinks[currentDrinkIndex])
+});
